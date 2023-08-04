@@ -1,0 +1,9 @@
+.contenedorFlex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.centrarContenido{
+    justify-content: center;
+    align-content: center;
+}

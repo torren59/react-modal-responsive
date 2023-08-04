@@ -1,0 +1,23 @@
+.inputSimple{
+background-color: white;
+border-radius: 8px;
+padding: 0.2em;
+}
+
+.inputSimple input{
+    border: 0px;
+    border-radius: 8px;
+    width: 100%;
+    height: 2em;
+    background-color: rgb(236, 234, 234);
+}
+
+.inputSimple input:focus{
+    background-color: white;
+}
+
+.inputSimple label{
+    width: 100%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}

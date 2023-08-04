@@ -1,0 +1,14 @@
+.botonSimple{
+    font-size: medium;
+    height: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border: 0px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.botonConfirmacion{
+    background-color: rgb(2, 8, 135);
+    color: white;
+}
