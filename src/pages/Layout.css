@@ -2,5 +2,5 @@
     height: 100vh;
     background-image: url(../img/logInBackground.jpg);
     background-repeat: no-repeat;
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
 }

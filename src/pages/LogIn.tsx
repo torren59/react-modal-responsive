@@ -10,7 +10,7 @@ import "../components/ventanas/ContenedorVentana.css";
 export default function LogIn() {
 
     return (
-        <ContenedorVentana forma='vertical' medida={50}>
+        <ContenedorVentana forma='vertical' medida={50} id='AB'fatherIsContextProvider={true}>
             <Form method='post' action='/' className='contenedorFlex centrarContenido' style={{width: '100%', height: '100%'}}>
                 <InputSimple titulo='Correo electrónico' nombre='email' tipo='text' />
                 <InputSimple titulo='Clave' nombre='password' tipo='password' />

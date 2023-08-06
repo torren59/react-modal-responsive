@@ -1,16 +1,21 @@
-import * as React from 'react';
+import  * as React from 'react';
 import "./ContenedorVentana.css";
 import "../../styles/EstilosFlex.css"
 
 
 
   interface ContenedorVentanaProps {
-     children?: string | JSX.Element | string[] | React.ReactNode,
-     forma: 'cuadrada' | 'horizontal' | 'vertical' | 'auto',
-     medida?: number,
-     borde?: boolean,
-     funcionCerrado?: Function,
+    id?: string,
+    fatherIsContextProvider?: boolean,
+    children?: string | JSX.Element | string[] | React.ReactNode,
+    forma: 'cuadrada' | 'horizontal' | 'vertical' | 'auto',
+    medida?: number,
+    borde?: boolean,
+    funcionCerrado?: Function,
  }
+
+
+let medidasContenedorVentana = React.createContext({alto:0, ancho: 0});
 
 /**
  * El contenedorVentana es un componente diseñado para definir la forma, tamaño y márgenes para la creación
@@ -45,15 +50,21 @@ import "../../styles/EstilosFlex.css"
  * que el usuario no deba cerrar
  * 
  */
-export default function ContenedorVentana ({children = "...", forma, medida, borde, funcionCerrado}: ContenedorVentanaProps) {
+export default function ContenedorVentana ({id ,fatherIsContextProvider ,children = "...", forma, medida, borde, funcionCerrado}: ContenedorVentanaProps) {
+  let contexto = React.useContext(medidasContenedorVentana);
+  let altoPantalla: number = contexto.alto !== 0 && fatherIsContextProvider ? contexto.alto : window.screen.height;
+  let anchoPantalla: number = contexto.ancho !==0 && fatherIsContextProvider ? contexto.ancho :  window.screen.width;
+  let child: React.ReactNode;
+  const [elemento, setElemento] = React.useState({alto: 0, ancho: 0});
 
-  const altoPantalla: number = window.screen.height;
-  const anchoPantalla: number = window.screen.width;
+
+  /**Se define por defecto dimesiones de la ventana como auto, de modo que si la forma solicitada es auto
+   * los valores ya habrían sido asignados y estaría listo para rederizar*/
   let altoVentana: number | 'auto' = 'auto';
   let anchoVentana: number | 'auto' = 'auto';
 
   //Se definen las dimensiones de la ventana según las opciones especificadas (medida y forma)
-  if(forma != 'auto' && typeof(medida) != 'undefined'){
+  if(forma !== 'auto' && medida !== undefined){
     switch (forma) {
       case 'cuadrada':
         let ladoMenor: number = altoPantalla > anchoPantalla ? anchoPantalla : altoPantalla;
@@ -70,17 +81,56 @@ export default function ContenedorVentana ({children = "...", forma, medida, bor
       break;
     }
   }
-  
 
+  /**Rescatando las dimensiones del contenedor para ser inyectadas en los contenedores hijos u otros
+   * elementos que necesiten de esta información por medio  */
+  React.useEffect(() => {
+    let element = id !== undefined ? document.getElementById(id) : null;
+    let altoInterno: number = 0;
+    let anchoInterno: number = 0;
+    if(element !== null){
+      altoInterno = Number.parseInt(element.style.height);
+      anchoInterno = Number.parseInt(element.style.width);
+    }
+
+    let dimensiones = {
+      "alto": altoInterno,
+      "ancho": anchoInterno
+    }
+
+    setElemento(dimensiones);
+  },[]);
+
+  /** Se asigna el valor de la propiedad child, dependiendo de la obtención de la info del propio contenedor mediante
+   * el useEffect con el fin de poder renderizar los componentes hijos teniendo el contexto disponible con las
+   * dimensiones del componente padre */
+  if(elemento.alto !== 0 && elemento.ancho !== 0 && id !== undefined){
+    child = (
+      <medidasContenedorVentana.Provider value = {elemento} >
+        {children}
+      </medidasContenedorVentana.Provider>
+    );
+  }
+  else if(id === undefined){
+    child = children;
+
+  }
+  else {
+    child = <p>Cargando contenido</p>
+  }
+
+
+  /**funcionCerrado es una función que llama al useStatePadre, por lo cual el elemento que contiene un
+  ContenedorVentana debe definir cómo funcionará la lógica del useSate para el cerrado del contenedor*/
   function cerrar(){
     typeof(funcionCerrado) != 'undefined' && funcionCerrado();
   }
 
   return (
-    <div className='ContenedorVentana' style={{width: anchoVentana, height: altoVentana, border: borde ? '1px solid black' : ""}}   >
-      {typeof(funcionCerrado) != 'undefined' && <div className='botonCerrado contenedorFlex centrarContenido' onClick={cerrar} > <b>X</b> </div>} 
+    <div id= {id !== undefined ? id : ""} className='ContenedorVentana' style={{width: anchoVentana, height: altoVentana, border: borde ? '1px solid black' : ""}}   >
+      {funcionCerrado !== undefined && <div className='botonCerrado contenedorFlex centrarContenido' onClick={cerrar} > <b>X</b> </div>} 
         <div className='ContenidoVentana' >
-        {children}
+          {child}
         </div>
     </div>
   );
