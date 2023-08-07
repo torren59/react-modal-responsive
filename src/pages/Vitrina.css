@@ -5,3 +5,22 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2em;
 }
+
+.producto{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
+}
+
+.especificaciones{
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    /* transform: translateY(-50%); */
+    transform: translateX(-50%);
+}
+

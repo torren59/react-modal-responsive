@@ -1,0 +1,15 @@
+.VentanaDetalles {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    justify-content: center;
+    align-content: center;
+}
+
+.Detalle{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}

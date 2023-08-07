@@ -1,62 +1,84 @@
 {
-    "producto001" : {
-        "serial": "1223455",
-        "nombre": "Portatil Dell",
-        "valor": 1550000
-    },
-    
-    "producto002" : {
-        "serial": "xcbcvhbfg",
-        "nombre": "Portatil HP",
-        "valor": 1250000
-    },
-
-    "producto003" : {
-        "serial": "fdhy445",
-        "nombre": "Portatil Asus",
-        "valor": 1350000
-    },
-
-    "producto004" : {
-        "serial": "hrvgt645",
-        "nombre": "Portatil Lenovo",
-        "valor": 1500000
-    },
-
-    "producto005" : {
-        "serial": "9876567y",
-        "nombre": "Portatil Compaq",
-        "valor": 1200000
-    },
-
-    "producto006" : {
-        "serial": "432768",
-        "nombre": "Portatil Compumax",
-        "valor": 1100000
-    },
-
-    "producto007" : {
-        "serial": "089096578",
-        "nombre": "Portatil Vaio",
-        "valor": 1600000
-    },
-
-    "producto008" : {
-        "serial": "4214234",
-        "nombre": "Portatil Surface",
-        "valor": 2000000
-    },
-
-    "producto009" : {
-        "serial": "768765",
-        "nombre": "Portatil Samsung",
-        "valor": 2200000
-    },
-
-    "producto010" : {
-        "serial": "54645645",
-        "nombre": "Portatil Apple",
-        "valor": 8000000
-    }
-
+    "productos": [
+        {
+            "serial": "1223455",
+            "nombre": "Portatil Dell",
+            "valor": 1550000,
+            "procesador": "Intel Core I5",
+            "ram": "8 Gb",
+            "Almacenamiento": "1 Tb"    
+        },
+        {
+            "serial": "xcbcvhbfg",
+            "nombre": "Portatil HP",
+            "valor": 1250000,
+            "procesador": "Intel Core I3",
+            "ram": "8 Gb",
+            "Almacenamiento": "1 Tb"   
+        },
+        {
+            "serial": "fdhy445",
+            "nombre": "Portatil Asus",
+            "valor": 1350000,
+            "procesador": "Intel Core I5",
+            "ram": "8 Gb",
+            "Almacenamiento": "2 Tb"   
+        },
+        {
+            "serial": "hrvgt645",
+            "nombre": "Portatil Lenovo",
+            "valor": 1500000,
+            "procesador": "Intel Core I5",
+            "ram": "8 Gb",
+            "Almacenamiento": "500 Gb"
+        },
+        {
+            "serial": "9876567y",
+            "nombre": "Portatil Compaq",
+            "valor": 1200000,
+            "procesador": "Intel Celeron",
+            "ram": "8 Gb",
+            "Almacenamiento": "1 Tb"   
+        },
+        {
+            "serial": "432768",
+            "nombre": "Portatil Compumax",
+            "valor": 1100000,
+            "procesador": "Intel Core I5",
+            "ram": "4 Gb",
+            "Almacenamiento": "1 Tb"   
+        },
+        {
+            "serial": "089096578",
+            "nombre": "Portatil Vaio",
+            "valor": 1600000,
+            "procesador": "Intel Core I3",
+            "ram": "8 Gb",
+            "Almacenamiento": "1 Tb"
+        },
+        {
+            "serial": "4214234",
+            "nombre": "Portatil Surface",
+            "valor": 2000000,
+            "procesador": "Intel Core I7",
+            "ram": "8 Gb",
+            "Almacenamiento": "500 Gb"   
+        },
+        {
+            "serial": "768765",
+            "nombre": "Portatil Samsung",
+            "valor": 2200000,
+            "procesador": "Intel Core I5",
+            "ram": "16 Gb",
+            "Almacenamiento": "256 Gb"   
+        },
+        {
+            "serial": "54645645",
+            "nombre": "Portatil Apple",
+            "valor": 8000000,
+            "procesador": "M2",
+            "ram": "12 Gb",
+            "Almacenamiento": "1 Tb"   
+        }
+    ]
 }
