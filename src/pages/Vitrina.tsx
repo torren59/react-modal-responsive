@@ -44,8 +44,7 @@ export function Vitrina () {
     abrirEspecificacion();
   }
 
-  ventanaDetalles.nombre = 'juajaja';
-  contenido = productos.productos.map((producto) =>
+  contenido = productos.productos.map((producto:any) =>
         { return (
         <ContenedorVentana fatherIsContextProvider = {true} forma={'cuadrada'} medida={43} borde= {true} >
         <div className='producto' onClick= { () => { traerEspecificaciones(producto.serial) } } >
@@ -65,7 +64,7 @@ export function Vitrina () {
       </ContenedorVentana>
       {especificacion ?(<div className='especificaciones'>
         <VentanaDetalles funcionCerrar={ especificaciones.funcionCerrar } serial = { especificaciones.serial } 
-        nombre= {especificaciones.nombre} procesador= {especificaciones.procesador} ram= {especificaciones.procesador}
+        nombre= {especificaciones.nombre} procesador= {especificaciones.procesador} ram= {especificaciones.ram}
         almacenamiento= {especificaciones.almacenamiento} valor={ especificaciones.valor} />
         </div>) : ''}  
     </div>
