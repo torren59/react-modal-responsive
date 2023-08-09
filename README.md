@@ -107,7 +107,6 @@
     <center>
         <img src="./src/img/ContenedroVentana_Estructura.jpg" alt="Estructura básica contenedor">
     </center>
-
     <p>
         <i>En proceso de redacción y finalización finalización</i>
     </p>
