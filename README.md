@@ -12,7 +12,7 @@
         <h2>Propósito</h2>
     </hgroup>
     <p>
-        Se brinda una solución sencilla, robusta y extendible para el uso de ventanas y modales bajo el
+        Se brinda una solución sencilla, robusta y extensible para el uso de ventanas y modales bajo el
         concepto de componente en React. Este componente facilita el proceso de desarrollo frontend al
         ofrecer al desarrollador la posibilidad de especificar la orientación y tamaño de una ventana o modal
         respecto
@@ -55,26 +55,26 @@
         La interfaz nos presenta los siguientes atributos: <br>
         <ul>
             <li>
-                <b>id:</b> Asignamos un id al contenedor para diferenciarlo y conocer sus 
+                <b>id: </b> Asignamos un id al contenedor para diferenciarlo y conocer sus 
                 dimensiones para futuros usos, como la creación de ventanas inscritas en el componente. 
             </li><br>
             <li>
-                <b>fatherIsContextProvider:</b> Confirmamos a la ventana en creación que su componente padre es
-                otro ContnedorVentana, con la finalidad de consultar las dimensiones del componente padre y 
+                <b>fatherIsContextProvider: </b> Confirmamos a la ventana en creación que su componente padre es
+                otro ContenedorVentana, con la finalidad de consultar las dimensiones del componente padre y 
                 renderizarse exitosamente dentro del mismo sin exceder las dimensiones del contenedor padre.
             </li><br>
             <li>
-                <b>children:</b>El atributo pertenece a la clase React.Reactnode, su función es permitir
+                <b>children: </b>El atributo pertenece a la clase React.Reactnode, su función es permitir
                 la ubicación de etiquetas o elementos e su interior, los cuales serían renderizador como 
                 el contenido propio de la ventana.
             </li><br>
             <li>
-                <b>forma:</b>Define la relación de aspecto que debe tener la ventana; 'cuadrada' (relación 1:1),
+                <b>forma: </b>Define la relación de aspecto que debe tener la ventana; 'cuadrada' (relación 1:1),
                  'vertical' (relación 2 a 3), 'horizontal' (relación 3 a 2) y auto (Ideal cuando quieres que se 
                  adecúe a una cuadricula Grid de CSS)
             </li><br>
             <li>
-                <b>medida:</b>El porcentaje de la pantalla o del contenedor padre que quieres sea abarcado por 
+                <b>medida: </b>El porcentaje de la pantalla o del contenedor padre que quieres sea abarcado por 
                 la ventana que estás declarando; su valor debe abarcar entre 1 y 100 y los valores de tamaño 
                 serán definidos respecto al lado de mayor extensión correspondiente a la su forma (si la forma es horizontal 
                 el cálculo se hace respecto a la propiedad width, si la forma es vertical el cálculo se hace 
@@ -82,10 +82,10 @@
                 será tenido en cuenta.
             </li><br>
             <li>
-                <b>borde:</b>Define si queremos que nuestra ventana se renderice con bordes.
+                <b>borde: </b>Define si queremos que nuestra ventana se renderice con bordes.
             </li><br>
             <li>
-                <b>funcionCerrado:</b>Este atributo recibe la función que utilizará el componente padre para saber
+                <b>funcionCerrado: </b>Este atributo recibe la función que utilizará el componente padre para saber
                 si debe dejar de renderizar la ventana (por lo general un llamado a un useState), adicionalmente 
                 asigna un ícono de <b>X</b> en la parte superior derecha de la ventana. 
             </li>
