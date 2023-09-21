@@ -62,11 +62,13 @@ export function Vitrina () {
           {contenido}
         </div>
       </ContenedorVentana>
-      {especificacion ?(<div className='especificaciones'>
-        <VentanaDetalles funcionCerrar={ especificaciones.funcionCerrar } serial = { especificaciones.serial } 
-        nombre= {especificaciones.nombre} procesador= {especificaciones.procesador} ram= {especificaciones.ram}
-        almacenamiento= {especificaciones.almacenamiento} valor={ especificaciones.valor} />
-        </div>) : ''}  
+      {especificacion ?(
+        <div className='especificaciones'>
+          <VentanaDetalles funcionCerrar={ especificaciones.funcionCerrar } serial = { especificaciones.serial } 
+          nombre= {especificaciones.nombre} procesador= {especificaciones.procesador} ram= {especificaciones.ram}
+          almacenamiento= {especificaciones.almacenamiento} valor={ especificaciones.valor} />
+        </div>
+      ) : ''}  
     </div>
   );
 }

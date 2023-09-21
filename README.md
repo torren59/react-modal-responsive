@@ -76,7 +76,7 @@
             <li>
                 <b>medida: </b>El porcentaje de la pantalla o del contenedor padre que quieres sea abarcado por 
                 la ventana que estás declarando; su valor debe abarcar entre 1 y 100 y los valores de tamaño 
-                serán definidos respecto al lado de mayor extensión correspondiente a la su forma (si la forma es horizontal 
+                serán definidos respecto al lado de mayor extensión correspondiente a su forma (si la forma es horizontal 
                 el cálculo se hace respecto a la propiedad width, si la forma es vertical el cálculo se hace 
                 respecto a la propiedad height). Si el atributo forma tiene el valor 'auto', este atributo no 
                 será tenido en cuenta.

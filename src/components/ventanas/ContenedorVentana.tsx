@@ -101,6 +101,7 @@ export default function ContenedorVentana ({id ,fatherIsContextProvider ,childre
     setElemento(dimensiones);
   },[]);
 
+  
   /** Se asigna el valor de la propiedad child, dependiendo de la obtención de la info del propio contenedor mediante
    * el useEffect con el fin de poder renderizar los componentes hijos teniendo el contexto disponible con las
    * dimensiones del componente padre */
