@@ -107,8 +107,25 @@
     <center>
         <img src="./src/img/ContenedroVentana_Estructura.jpg" alt="Estructura básica contenedor">
     </center>
+    <h3>Funcionamiento</h3>
+    <p>
+        El componente se vale de los atributos descritos anteriormente y varios hooks de react para garantizar su 
+        reactividad y comunicación. A continuación se presenta a grandes rasgos los procesos y verificaciones previos
+        a la renderización del componente.
+    </p>
+    <p>
+        <ul>
+            <li>
+                <b>Definición de atributos: </b>Una vez importadas las librerías necesarias para la creación de un
+                componente funcional de React se inicia con la declaración a través de una interfaz con el conjunto de
+                atributos utilizados por el componente y sus tipos correspondientes. Se evidencia la asignación del atributo
+                <b>id</b> como una cadena opcional, fatherIsContextProvider como un booleano opcional
+            </li>
+        </ul>
+    </p>
     <p>
         <i>En proceso de redacción y finalización -</i>
     </p>
+    
 </body>
 </html>

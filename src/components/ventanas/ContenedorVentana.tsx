@@ -7,7 +7,7 @@ import "../../styles/EstilosFlex.css"
   interface ContenedorVentanaProps {
     id?: string,
     fatherIsContextProvider?: boolean,
-    children?: string | JSX.Element | string[] | React.ReactNode,
+    children?: React.ReactNode,
     forma: 'cuadrada' | 'horizontal' | 'vertical' | 'auto',
     medida?: number,
     borde?: boolean,
